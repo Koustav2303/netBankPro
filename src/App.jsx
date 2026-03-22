@@ -3,10 +3,12 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast';
 import { Sun, Moon } from 'lucide-react';
 
+import { AccountProvider } from './context/AccountContext';
+import ScrollToTop from './components/ScrollToTop';
+
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
-import { AccountProvider } from './context/AccountContext';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,6 +24,7 @@ function App() {
   return (
     <AccountProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen relative font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
           
           <button 
